@@ -24,6 +24,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import com.google.firebase.Firebase
+import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.firestore
 import tw.composefirestore.ui.theme.ComposefirestoreTheme
 
@@ -99,7 +100,9 @@ fun Birth(m: Modifier){
             Button(onClick = {
                 val user = Person(userName, userWeight, userPassword)
                 db.collection("users")
-                    .add(user)
+                    //.add(user)
+                    .document(userName)
+                    .set(user)
                     .addOnSuccessListener { documentReference ->
                         msg = "新增/異動資料成功"
                     }
@@ -109,10 +112,34 @@ fun Birth(m: Modifier){
             }) {
                 Text("新增/修改資料")
             }
-            Button(onClick = {  }) {
+            Button(onClick = {
+                db.collection("users")
+                //.whereEqualTo("userName", userName)
+                //.whereLessThan("userWeight", userWeight)
+                .orderBy("userWeight", Query.Direction.DESCENDING)
+                .limit(2)
+                .get()
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        msg = ""
+                        for (document in task.result!!) {
+                            msg += "文件id：" + document.id + "\n名字：" + document.data["userName"] +
+                                    "\n出生體重：" + document.data["userWeight"].toString() + "\n\n"
+                        }
+                        if (msg == "") {
+                            msg = "查無資料"
+                        }
+                    }
+                }
+            }) {
                 Text("查詢資料")
             }
-            Button(onClick = {  }) {
+            Button(onClick = {
+                db.collection("users")
+                .document(userName)
+                .delete()
+                msg = "刪除資料"
+            }) {
                 Text("刪除資料")
             }
         }
