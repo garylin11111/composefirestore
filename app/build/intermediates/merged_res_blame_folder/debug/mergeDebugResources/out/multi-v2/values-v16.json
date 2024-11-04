@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "tw.composefirestore.app-mergeDebugResources-42:/values-v16/values-v16.xml",
+            "outputFile": "tw.composefirestore.app-mergeDebugResources-47:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\student\\.gradle\\caches\\transforms-4\\542202f7bf5bcc7b2bb22c41d511dde1\\transformed\\core-1.12.0\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\student\\.gradle\\caches\\transforms-4\\5a6124b63af4240cd672030b8c395efe\\transformed\\core-1.12.0\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

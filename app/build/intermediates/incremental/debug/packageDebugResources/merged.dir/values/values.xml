@@ -8,5 +8,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">composefirestore</string>
+    <string name="gcm_defaultSenderId" translatable="false">92976154317</string>
+    <string name="google_api_key" translatable="false">AIzaSyDsiN03tlAh6l5fI4cdNOH82aK7a1dTHKo</string>
+    <string name="google_app_id" translatable="false">1:92976154317:android:6626289063020a95a24b84</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDsiN03tlAh6l5fI4cdNOH82aK7a1dTHKo</string>
+    <string name="google_storage_bucket" translatable="false">gary1104-6a6c2.firebasestorage.app</string>
+    <string name="project_id" translatable="false">gary1104-6a6c2</string>
     <style name="Theme.Composefirestore" parent="android:Theme.Material.Light.NoActionBar"/>
 </resources>
